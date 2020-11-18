@@ -143,7 +143,7 @@ def init_sensors(sensor_type, sensors):
     sensor_type_name = sensor_type_to_name(sensor_type)
     if  sensor_type == sensor_type_miflora:
         config_section = sensor_type_miflora
-        mac_regexp = "C4:7C:8D:[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}"
+        mac_regexp = "(C4:7C:8D|80:EA:CA):[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}"
     elif sensor_type == sensor_type_mitempbt:
         config_section = sensor_type_mitempbt
         mac_regexp = "(4C:65:A8|58:2D:34):[0-9A-F]{2}:[0-9A-F]{2}:[0-9A-F]{2}"
