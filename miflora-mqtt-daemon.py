@@ -478,6 +478,7 @@ elif reporting_mode == 'homeassistant-mqtt':
         for sensor, params in miflora_parameters.items():
             payload = dict(base_payload.items())
             payload['unit_of_measurement'] = params['unit']
+            payload['expire_after'] = 28000
             payload['value_template'] = "{{ value_json.%s }}" % (sensor, )
             payload['name'] = "{} {}".format(flora_name, sensor.title())
             if 'device_class' in params:
@@ -491,6 +492,7 @@ elif reporting_mode == 'homeassistant-mqtt':
         for sensor, params in mitempbt_parameters.items():
             payload = dict(base_payload.items())
             payload['unit_of_measurement'] = params['unit']
+            payload['expire_after'] = 28000
             payload['value_template'] = "{{ value_json.%s }}" % (sensor, )
             payload['name'] = "{} {}".format(mitempbt_name, sensor.title())
             if 'device_class' in params:
